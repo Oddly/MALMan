@@ -4,7 +4,7 @@ from MALMan import app
 import MALMan.database as DB
 
 from wtforms import Form as wtforms_Form
-from flask.ext.wtf import (Form, BooleanField, TextField, PasswordField,
+from wtforms import (Form, BooleanField, TextField, PasswordField,
     DateField, IntegerField, SubmitField, SelectField, DecimalField,
     TextAreaField, FileField, validators, EqualTo, ValidationError)
 from flask.ext.uploads import UploadSet, configure_uploads
