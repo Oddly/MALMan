@@ -6,7 +6,7 @@ import MALMan.database as DB
 from wtforms import Form as wtforms_Form
 from wtforms import (Form, BooleanField, TextField, PasswordField,
     DateField, IntegerField, SubmitField, SelectField, DecimalField,
-    TextAreaField, FileField, validators, EqualTo, ValidationError)
+    TextAreaField, FileField, validators, ValidationError)
 from flask.ext.uploads import UploadSet, configure_uploads
 
 from flask_security.forms import ConfirmRegisterForm, unique_user_email
@@ -77,7 +77,7 @@ class MembersEditPassword(Form):
         validators.Length(
             message="Password must be at least 6 characters long", min=6)])
     password_confirm = PasswordField("Retype Password", [
-        EqualTo('password', message="Passwords do not match")])
+        validators.EqualTo('password', message="Passwords do not match")])
     submit = SubmitField("change my password")
 
 
